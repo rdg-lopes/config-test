@@ -21,8 +21,8 @@ spring:
       - id: webapi-product
         uri: http://localhost:8081/webapi-product
         predicates:
-          - Path=/product/**
+          - Path=/webapi-product/**
       - id: webapi-customer
         uri: http://localhost:8082/webapi-customer
         predicates:
-          - Path=/customer/**
+          - Path=/webapi-customer/**
