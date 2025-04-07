@@ -13,16 +13,17 @@ eureka:
       wait-time-in-ms-when-sync-empty: 3000
 spring:
   cloud:
-    Discovery:
-      locator:
-        enabled: true
-        lower-case-service-id: true
-    routes:
-      - id: webapi-product
-        uri: http://localhost:8081
-        predicates:
-          - Path=/webapi-product/**
-      - id: webapi-customer
-        uri: http://localhost:8082
-        predicates:
-          - Path=/webapi-customer/**
+    gateway:
+      Discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: webapi-product
+          uri: http://localhost:8081
+          predicates:
+            - Path=/webapi-product/**
+        - id: webapi-customer
+          uri: http://localhost:8082
+          predicates:
+            - Path=/webapi-customer/**
