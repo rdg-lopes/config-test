@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    Discovery:
+      locator:
+        enabled: true
+        lower-case-service-id: true
+    routes:
+      - id: webapi-product
+        uri: http://localhost:8081/webapi-product
+        predicates:
+          - Path=/product/**
+      - id: webapi-customer
+        uri: http://localhost:8082/webapi-customer
+        predicates:
+          - Path=/customer/**
