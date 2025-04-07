@@ -1,3 +1,18 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /webapi-gateway
+eureka:
+  instance:
+    hostname: localhost
+    port: 9000
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+    server:
+      wait-time-in-ms-when-sync-empty: 3000
 spring:
   cloud:
     Discovery:
