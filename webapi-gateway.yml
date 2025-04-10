@@ -22,8 +22,8 @@ spring:
         - id: webapi-product
           uri: lb://WEBAPI-PRODUCT
           predicates:
-            - Path=/webapi-product/**
+            - Path=/product/**
         - id: webapi-customer
           uri: lb://WEBAPI-CUSTOMER
           predicates:
-            - Path=/webapi-customer/**
+            - Path=/customer/**
